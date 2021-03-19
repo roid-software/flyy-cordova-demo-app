@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "348719124503",
+    "firebase_url": "https://flyysdk.firebaseio.com",
+    "project_id": "flyysdk",
+    "storage_bucket": "flyysdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348719124503:android:a0b4219d34a16ddf728c52",
+        "android_client_info": {
+          "package_name": "theflyy.com.flyysdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348719124503-0ka6v0jkv7nuqqa9nndgur1nlviv7ee0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkFd20Q-_UoDSFY-QhzXJiYUuhkXRVC3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348719124503-0ka6v0jkv7nuqqa9nndgur1nlviv7ee0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
