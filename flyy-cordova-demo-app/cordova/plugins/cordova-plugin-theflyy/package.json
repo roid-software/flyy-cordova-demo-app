@@ -1,0 +1,39 @@
+{
+  "_from": "git+https://github.com/roid-software/flyy-plugin.git#1.0.6",
+  "_id": "cordova-plugin-theflyy@0.1.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-theflyy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/roid-software/flyy-plugin.git#1.0.6",
+    "rawSpec": "https://github.com/roid-software/flyy-plugin.git#1.0.6",
+    "saveSpec": "git+https://github.com/roid-software/flyy-plugin.git#1.0.6",
+    "fetchSpec": "https://github.com/roid-software/flyy-plugin.git",
+    "gitCommittish": "1.0.6"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "git+https://github.com/roid-software/flyy-plugin.git#1065f2852d4df36a07d326d9851482281e10c974",
+  "_spec": "https://github.com/roid-software/flyy-plugin.git#1.0.6",
+  "_where": "/home/dell/Documents/flyy-cordova-demo-app/flyy-cordova-demo-app",
+  "author": "",
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-theflyy",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "ISC",
+  "name": "cordova-plugin-theflyy",
+  "version": "0.1.0"
+}

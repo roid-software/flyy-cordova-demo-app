@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-theflyy": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/roid-software/flyy-plugin.git#1.0.9"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" filepath="$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-firebase-analytics/cordova-plugin-firebase-analytics.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-firebase-analytics/cordova-plugin-firebase-analytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-firebase-messaging/cordova-plugin-firebase-messaging.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-firebase-messaging/cordova-plugin-firebase-messaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-theflyy/cordova-plugin-theflyy.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-theflyy/cordova-plugin-theflyy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/cordova-plugin-whitelist.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/cordova-plugin-whitelist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-support-android-plugin/cordova-support-android-plugin.iml" filepath="$PROJECT_DIR$/plugins/cordova-support-android-plugin/cordova-support-android-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flyy-cordova-demo-app/flyy-cordova-demo-app.iml" filepath="$PROJECT_DIR$/flyy-cordova-demo-app/flyy-cordova-demo-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/src/main/java/main.iml" filepath="$PROJECT_DIR$/platforms/android/app/src/main/java/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platforms/android/app/src/main/main1.iml" filepath="$PROJECT_DIR$/platforms/android/app/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/cordova-plugin-whitelist/tests/tests.iml" filepath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/tests/tests.iml" />
+    </modules>
+  </component>
+</project>
