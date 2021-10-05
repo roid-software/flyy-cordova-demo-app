@@ -1,1 +1,1 @@
-{"plugins":["cordova-plugin-whitelist","cordova-plugin-cocoapod-support","cordova-plugin-theflyy"]}
+{"plugins":["cordova-plugin-whitelist","cordova-plugin-cocoapod-support","cordova-plugin-theflyy","cordova-plugin-firebase-messaging","cordova-plugin-firebase-analytics"]}
