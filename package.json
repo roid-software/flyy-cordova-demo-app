@@ -16,13 +16,11 @@
     "cordova-ios": "^6.2.0",
     "cordova-plugin-cocoapod-support": "^1.6.2",
     "cordova-plugin-fcm-with-dependecy-updated": "^7.8.0",
-    "cordova-plugin-theflyy": "file:../flyy-plugin",
     "cordova-plugin-whitelist": "^1.3.4"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-theflyy": {},
       "cordova-plugin-fcm-with-dependecy-updated": {
         "IOS_FIREBASE_MESSAGING_VERSION": "~> 7.4.0"
       }
