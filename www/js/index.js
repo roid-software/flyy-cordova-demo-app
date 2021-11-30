@@ -22,28 +22,45 @@
 
 
 function runFlyyMethods() {
-    cordova.plugins.FlyyPlugin.setAppPackage("theflyy.com.flyysdk", function (data) {
+    //theflyy.com.flyysdk
+    //com.mypaisaa.test
+    cordova.plugins.FlyyPlugin.setAppPackage("roidtechnologies.TempFlyyDemo.com", function (data) {
         console.log("Set Package Name: " + data)
     }, function (data) {
-        alert("Set Package Name Error: "+data)
+        console.log("Set Package Name Error: "+data)
     });
     
-    cordova.plugins.FlyyPlugin.initSdk("1a646e190c77be668cad", "production", function (data) {
+    //1a646e190c77be668cad prod
+    //56b19d849351cc73e39b stage
+    //8fce343fa6170bf1ecb5 stage
+    cordova.plugins.FlyyPlugin.initSdk("4f4a13714d719106a91d", "stage", function (data) {
         console.log("Init SDK Success: " + data)
     }, function (data) {
-        alert("Init SDK Error : " + data)
+        console.log("Init SDK Error : " + data)
     });
     
-    cordova.plugins.FlyyPlugin.setUser("9844313418", "all_users", function (data) {
+    cordova.plugins.FlyyPlugin.setThemeColor("#ffa500", "#ffa500", function (data) {
+        console.log("Set theme color Success : " + data)
+    }, function(data) {
+        console.log("Set theme color Error : " + data)
+    });
+    
+    cordova.plugins.FlyyPlugin.setUser("8897805851", "all_users", function (data) {
         console.log("Set User Success : " + data)
     }, function (data) {
-        alert("Set User Error : " + data)
+        console.log("Set User Error : " + data)
     });
     
-    cordova.plugins.FlyyPlugin.setUsername("Pooja", function (data) {
+//    cordova.plugins.FlyyPlugin.setNewUser("9844313418", function (data) {
+//        console.log("Set New User Success : " + data)
+//    }, function (data) {
+//        alert("Set New User Error : " + data)
+//    });
+//
+    cordova.plugins.FlyyPlugin.setUsername("Vaishnavi", function (data) {
         console.log("Set User Name Success : " + data)
     }, function (data) {
-        alert("Set User Name Error : " + data)
+        console.log("Set User Name Error : " + data)
     });
     
     cordova.plugins.FlyyPlugin.startOfferActivity("all_users", function (data) {
@@ -52,11 +69,11 @@ function runFlyyMethods() {
         console.log("Offers Page Error : " + data)
     });
     
-    //    cordova.plugins.FlyyPlugin.startRewardsActivity("all_users", function (data) {
-    //        console.log("Rewards Page Success : " + data)
-    //    }, function (data) {
-    //        console.log("Rewards Page Error : " + data)
-    //    });
+//    cordova.plugins.FlyyPlugin.startRewardsActivity("all_users", function (data) {
+//        console.log("Rewards Page Success : " + data)
+//    }, function (data) {
+//        console.log("Rewards Page Error : " + data)
+//    });
     //
     //    cordova.plugins.FlyyPlugin.startWalletActivity("all_users", function (data) {
     //        console.log("Wallet Page Success : " + data)
@@ -64,17 +81,17 @@ function runFlyyMethods() {
     //        console.log("Wallet Page Error : " + data)
     //    });
     
-    //    cordova.plugins.FlyyPlugin.trackEvent("testing", "cordova", function (data) {
-    //        alert("Track Event Success : " + data)
-    //    }, function(data) {
-    //        alert("Track Event Error : " + data)
-    //    });
-    //
-    //    cordova.plugins.FlyyPlugin.trackEventJson("testing", "cordova", function (data) {
-    //        alert("Track Event Success : " + data)
-    //    }, function(data) {
-    //        alert("Track Event Error : " + data)
-    //    });
+//        cordova.plugins.FlyyPlugin.trackEvent("fcm_test", "", function (data) {
+//            alert("Track Event Success : " + data)
+//        }, function(data) {
+//            alert("Track Event Error : " + data)
+//        });
+//    
+//        cordova.plugins.FlyyPlugin.trackEventJson("testing", "cordova", function (data) {
+//            alert("Track Event Success : " + data)
+//        }, function(data) {
+//            alert("Track Event Error : " + data)
+//        });
     //
     //    cordova.plugins.FlyyPlugin.setRewardGridSpanCount("3", function (data) {
     //        console.log("Rewards grid count Success : " + data)
@@ -100,12 +117,6 @@ function runFlyyMethods() {
     //        alert("Hanle notification Error : " + data)
     //    });
     //
-    cordova.plugins.FlyyPlugin.setThemeColor("#ffa500", "#ffa500", function (data) {
-        console.log("Set theme color Success : " + data)
-    }, function(data) {
-        alert("Set theme color Error : " + data)
-    });
-    
     
     //    cordova.plugins.FlyyPlugin.onSDKClosedWithScreenName(function (data) {
     //        console.log("ON FLYY SDK CLOSED : ")
@@ -186,6 +197,7 @@ function formatNow() {
 }
 
 function addToLog(log) {
+    console.log(log);
     document.getElementById("notification-logs").innerHTML =
     "<hr>" +
     "<p>Received at " +
@@ -202,15 +214,13 @@ function trySomeTimes(asyncFunc, onSuccess, onFailure, customTries) {
             onSuccess("Unavailable");
             return;
         }
-        asyncFunc()
-        .then(function (result) {
+        asyncFunc().then(function (result) {
             if ((result !== null && result !== "") || tries < 0) {
                 onSuccess(result);
             } else {
                 trySomeTimes(asyncFunc, onSuccess, onFailure, tries - 1);
             }
-        })
-        .catch(function (e) {
+        }).catch(function (e) {
             clearInterval(interval);
             onFailure(e);
         });
@@ -218,110 +228,100 @@ function trySomeTimes(asyncFunc, onSuccess, onFailure, customTries) {
 }
 
 function setupOnTokenRefresh() {
-    FCM.eventTarget.addEventListener(
-                                     "tokenRefresh",
-                                     function (data) {
+    FCM.eventTarget.addEventListener("tokenRefresh", function (data) {
         cordova.plugins.firebase.messaging.getToken().then(function(token) {
             console.log("Got device token: ", token);
             cordova.plugins.FlyyPlugin.sendFCMTokenToServer(token, function (data) {
-                alert("FCM Token Success : " + data)
+                console.log("FCM Token Success : " + data)
             });
         });
         addToLog("<p>FCM Token refreshed to " + data.detail + "</p>");
-    },
-                                     false
-                                     );
+    },false);
 }
 
 function setupOnNotification() {
-    FCM.eventTarget.addEventListener(
-                                     "notification",
-                                     function (data) {
+    FCM.eventTarget.addEventListener("notification", function (data) {
+        if(data != null) {
+        cordova.plugins.FlyyPlugin.handleBackgroundGroundNotification(JSON.stringify(data), function (data) {
+                    console.log("Handle notification Success : " + data)
+                }, function(data) {
+                    console.log("Hanle notification Error : " + data)
+                });
+        }
         addToLog("Pooja" + JSON.stringify(data.detail, null, 2) + "</pre>");
-    },
-                                     false
-                                     );
-    FCM.getInitialPushPayload()
-    .then((payload) => {
-        addToLog(
-                 "<p>Initial Payload</p><pre>" +
-                 JSON.stringify(payload, null, 2) +
-                 "</pre>"
-                 );
-    })
-    .catch((error) => {
-        addToLog(
-                 "<p>Initial Payload Error</p><pre>" +
-                 JSON.stringify(error, null, 2) +
-                 "</pre>"
-                 );
+    },false);
+   
+//    Retrieves the message that, on tap, opened the app. And null, if the app was open normally.
+    FCM.getInitialPushPayload().then((payload) => {
+        if(payload != null) {
+        cordova.plugins.FlyyPlugin.handleForeGroundNotification(JSON.stringify(payload), function (data) {
+                    console.log("Handle notification Success : " + data)
+                }, function(data) {
+                    console.log("Hanle notification Error : " + data)
+                });
+        }
+        addToLog("<p>Initial Payload</p><pre>" + JSON.stringify(payload, null, 2) + "</pre>");
+        
+    }).catch((error) => {
+        addToLog("<p>Initial Payload Error</p><pre>" + JSON.stringify(error, null, 2) + "</pre>");
     });
 }
 
 function logFCMToken() {
-    trySomeTimes(
-                 FCM.getToken,
-                 function (token) {
+    trySomeTimes(FCM.getToken, function (token) {
         cordova.plugins.firebase.messaging.getToken().then(function(token) {
             console.log("Got device token: ", token);
             cordova.plugins.FlyyPlugin.sendFCMTokenToServer(token, function (data) {
-                alert("FCM Token Success : " + data)
+                console.log("FCM Token Success : " + data)
             });
         });
         addToLog("<p>Started listening FCM as " + token + "</p>");
-    },
-                 function (error) {
+    }, function (error) {
         addToLog("<p>Error on listening for FCM token: " + error + "</p>");
-    }
-                 );
+    });
 }
 
 function logAPNSToken() {
     if (cordova.platformId !== "ios") {
         return;
     }
-    FCM.getAPNSToken(
-                     function (token) {
+    FCM.getAPNSToken(function (token) {
         addToLog("<p>Started listening APNS as " + token + "</p>");
-    },
-                     function (error) {
+    },function (error) {
         addToLog("<p>Error on listening for APNS token: " + error + "</p>");
-    }
-                     );
+    });
 }
 
-//function setupClearAllNotificationsButton() {
-//    document.getElementById("clear-all-notifications").addEventListener(
-//                                                                        "click",
-//                                                                        function () {
-//        FCM.clearAllNotifications();
-//    },
-//                                                                        false
-//                                                                        );
-//}
-//
-//function setupClearAllNotificationsButton() {
-//    document.getElementById("delete-instance-id").addEventListener(
-//                                                                   "click",
-//                                                                   function () {
-//        FCM.deleteInstanceId().catch(function (error) {
-//            alert(error);
-//        });
-//    },
-//                                                                   false
-//                                                                   );
-//}
+function setupClearAllNotificationsButton() {
+    document.getElementById("clear-all-notifications").addEventListener(
+                                                                        "click",
+                                                                        function () {
+        FCM.clearAllNotifications();
+    },
+                                                                        false
+                                                                        );
+}
+
+function setupClearAllNotificationsButton() {
+    document.getElementById("delete-instance-id").addEventListener(
+                                                                   "click",
+                                                                   function () {
+        FCM.deleteInstanceId().catch(function (error) {
+            console.log(error);
+        });
+    },
+                                                                   false
+                                                                   );
+}
 
 function waitForPermission(callback) {
-    FCM.requestPushPermission()
-    .then(function (didIt) {
+    FCM.requestPushPermission().then(function (didIt) {
         if (didIt) {
             callback();
         } else {
             addToLog("<p>Push permission was not given to this application</p>");
         }
-    })
-    .catch(function (error) {
+    }).catch(function (error) {
         addToLog("<p>Error on checking permission: " + error + "</p>");
     });
 }
@@ -334,8 +334,8 @@ function logHasPermissionOnStart() {
 
 function setupListeners() {
     runFlyyMethods();
-    logHasPermissionOnStart();
     waitForPermission(function () {
+        logHasPermissionOnStart();
         logFCMToken();
         logAPNSToken();
         setupOnTokenRefresh();
