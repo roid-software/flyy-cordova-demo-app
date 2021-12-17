@@ -22,25 +22,25 @@
 
 
 function runFlyyMethods() {
-    cordova.plugins.FlyyPlugin.setAppPackage("theflyy.com.flyysdk", function (data) {
+    cordova.plugins.FlyyPlugin.setAppPackage("roidtechnologies.TempFlyyDemo.com", function (data) {
         console.log("Set Package Name: " + data)
     }, function (data) {
         alert("Set Package Name Error: "+data)
     });
     
-    cordova.plugins.FlyyPlugin.initSdk("1a646e190c77be668cad", "production", function (data) {
+    cordova.plugins.FlyyPlugin.initSdk("4f4a13714d719106a91d", "stage", function (data) {
         console.log("Init SDK Success: " + data)
     }, function (data) {
         alert("Init SDK Error : " + data)
     });
     
-    cordova.plugins.FlyyPlugin.setUser("9844313418", "all_users", function (data) {
+    cordova.plugins.FlyyPlugin.setUser("9493488207", "all_users", function (data) {
         console.log("Set User Success : " + data)
     }, function (data) {
         alert("Set User Error : " + data)
     });
     
-    cordova.plugins.FlyyPlugin.setUsername("Pooja", function (data) {
+    cordova.plugins.FlyyPlugin.setUsername("Vaishnavi", function (data) {
         console.log("Set User Name Success : " + data)
     }, function (data) {
         alert("Set User Name Error : " + data)
